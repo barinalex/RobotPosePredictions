@@ -1,0 +1,5 @@
+<launch>
+    <node pkg="tf2_ros" type="static_transform_publisher" name="stp_circuit_world_init" args="0 0 0 0 0 0 1 world cave_circuit_practice_01" output="log" />
+    <node pkg="tf2_ros" type="static_transform_publisher" name="stp_circuit_caminit" args="0.06 0 0.408 0 0 0 1 cave_circuit_practice_01 camera_init" output="log" />
+    <node pkg="tf2_ros" type="static_transform_publisher" name="stp_aftmapped_x1" args="-0.06 0 -0.408 0 0 0 1 aft_mapped X1" output="log" />
+</launch>

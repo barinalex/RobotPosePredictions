@@ -1,0 +1,8 @@
+<launch>
+<param name="data_path" value="/home/barinale/Documents/bachelorproject/barinale_ws/data/"/>
+<param name="tag" value="X1"/>
+<node name="data_reader" pkg="map_cuts" type="flippers_extract_data.py" required="true" output="screen" args="--clock" >
+</node>
+<node name="rosbag_play" pkg="rosbag" type="play" args="--clock -r 1 -s 0 --bags /home/barinale/Documents/bachelorproject/test.bag" >
+</node>
+</launch> 

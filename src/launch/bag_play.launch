@@ -1,0 +1,12 @@
+<launch>
+<param name="data_path" value="/home/barinale/Documents/bachelorproject/barinale_ws/data/">
+<param name="tag" value="X2"/>
+<node name="footprint_to_subt_broadcast" pkg="map_cuts" type="footprint_to_subt_broadcast.py" required="true" output="screen" args="--clock" >
+</node>
+<node name="data_reader" pkg="map_cuts" type="v2_extract_data.py" required="true" output="screen" args="--clock" >
+</node>
+<node name="rosbag_play" pkg="rosbag" type="play" args="--clock -r 1 -s 0 --bags /home/barinale/Documents/bachelorproject/robot_data_23b48289-0044-41aa-be12-e24ecca4ac8d_X2_0_X2.bag">
+    <remap from="robot_data/tf_static" to="/tf_static"/>
+    <remap from="robot_data/tf" to="/tf" />
+</node>
+</launch> 
